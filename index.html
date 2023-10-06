@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Buttons</title>
+    <style>
+        .btn {
+            /* 通常のスタイル */
+        }
+        .checked {
+            /* 選択されたときのスタイル */
+            background-color: #f0f0f0; /* 例: チェック時の背景色を変更 */
+        }
+    </style>
+</head>
+<body>
+    <label>
+        <input type="radio" name="radioButtons" class="btn">
+        <a href="#">Radio Button 1</a>
+    </label>
+    <br>
+
+    <label>
+        <input type="radio" name="radioButtons" class="btn">
+        <a href="#">Radio Button 2</a>
+    </label>
+    <br>
+
+    <label>
+        <input type="radio" name="radioButtons" class="btn">
+        <a href="#">Radio Button 3</a>
+    </label>
+    <br>
+
+    <label>
+        <input type="radio" name="radioButtons" class="btn">
+        <a href="#">Radio Button 4</a>
+    </label>
+    <br>
+
+    <label>
+        <input type="radio" name="radioButtons" class="btn">
+        <a href="#">Radio Button 5</a>
+    </label>
+    <br>
+
+    <!-- 追加のボタン要素 -->
+    <button id="donation">donation</button>
+
+    <script>
+        // ラジオボタンが選択されたときにクラスを切り替える関数
+        function toggleClass() {
+            var radioButtons = document.getElementsByName("radioButtons");
+            for (var i = 0; i < radioButtons.length; i++) {
+                var radioButton = radioButtons[i];
+                var label = radioButton.parentElement;
+                if (radioButton.checked) {
+                    label.querySelector("a").classList.add("checked");
+                } else {
+                    label.querySelector("a").classList.remove("checked");
+                }
+            }
+        }
+
+        // ラジオボタンにイベントリスナーを追加
+        var radioButtons = document.getElementsByName("radioButtons");
+        for (var i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].addEventListener("change", toggleClass);
+        }
+    </script>
+</body>
+</html>
