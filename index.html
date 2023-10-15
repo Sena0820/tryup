@@ -21,7 +21,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
     <label>
-        <input type="radio" name="radioButtons" class="btn">
+        <input type="radio" name="radioButtons" class="btn" id = "btn1" onclick="changeImgId(this)">
         <a href="#">Radio Button 1</a>
     </label>
     <br>
@@ -72,6 +72,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         var radioButtons = document.getElementsByName("radioButtons");
         for (var i = 0; i < radioButtons.length; i++) {
             radioButtons[i].addEventListener("change", toggleClass);
+        }
+
+        function changeImgId(radio) {
+          var radio_id = radio.id;
+          var target = document.getElementById('donation');
+          target.setAttribute('id', 'radio_id')
         }
     </script>
 </body>
